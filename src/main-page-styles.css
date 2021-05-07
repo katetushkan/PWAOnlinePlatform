@@ -1,0 +1,383 @@
+/* variables */
+:root{
+    --primary: #363A38;
+    --green-acsent: #7AD7C0;
+    --coral-acsent: #FF6D6A;
+    --white-text: #ffffff;
+    }
+/* fonts */
+@font-face {
+    font-family: 'Fira Code Regular';
+    src: url("assets/fonts/Fira_Code/FiraCode-Regular.ttf");
+}
+@font-face {
+    font-family: 'Fira Code Bold';
+    src: url("assets/fonts/Fira_Code/FiraCode-Bold.ttf");
+}
+@font-face {
+    font-family: 'Montserrat Bold';
+    src: url("assets/fonts/Montserrat/Montserrat-Bold.ttf");
+}
+@font-face {
+    font-family: 'Montserrat Black';
+    src: url("assets/fonts/Montserrat/Montserrat-Black.ttf");
+}
+@font-face {
+    font-family: "Fira Code Light";
+    src: url("assets/fonts/Fira_Code/FiraCode-Light.ttf");
+}
+/* reset */
+li{
+    list-style-type: none;
+}
+body, p, a, ul, li{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+/*base-styles*/
+body{
+    background: var(--primary);
+    overflow-x: hidden;
+}
+button.menu{
+    border: none;
+    width: 46px;
+    height: 37.5px;
+    background: none;
+}
+nav.anonimus-green-nav{
+    visibility: hidden;
+    height: 0;
+}
+
+button.contact-us-btn{
+    width: 104px;
+    height: 27px;
+    margin-top: 24px;
+    margin-left: 237px;
+    background: none;
+    border: none;
+    background-image: url("assets/contact-us-button.svg");
+
+}
+
+/* mobile-styles */
+
+/* main screen*/
+button.menu-green{
+    background-image: url("assets/menu-logo-btn.svg");
+    justify-self: start;
+    align-self: start;
+}
+
+button.menu-coral{
+    background-image: url("assets/menu-logo-btn-coral.svg");
+}
+
+div.introducing-screen{
+    height: 426px;
+}
+
+div.introducing-screen-content {
+    margin: 25.5px 21px 56px 25.5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 37.5px 163px 101px 43px ;
+    justify-items: end;
+    align-items: end;
+}
+
+h1.intro-text-h1 {
+    margin: 35px 0 0 0;
+    font-family: "Montserrat Bold";
+    color: #4DBBA1;
+    font-size: 36px;
+    text-align: right;
+}
+
+h3.intro-text-h3 {
+    margin: 27px 0 0 0;
+    font-family: 'Fira Code Regular';
+    font-weight: normal;
+    letter-spacing: 0.015em;
+    color: #E0F6F2;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: right;
+}
+
+button.go-to-btn {
+    margin: 22px 0 0 190px;
+    width: 137px;
+    height: 21px;
+    background: none;
+    padding: 0;
+    border: none;
+    color: #E0F6F2;
+    font-family: "Fira Code Regular";
+    font-size: 16px;
+    line-height: 21px;
+    text-indent: 3px;
+    text-decoration: underline;
+    letter-spacing: -0.045em;
+    align-self: center;
+}
+
+/* benefits-screen*/
+section.benefits-screen{
+    margin-top: 56px;
+    height: 668px;
+    background-color: var(--green-acsent);
+    opacity: 0.9;
+}
+
+div.benefits-screen-content {
+    margin: 0;
+    padding: 36px 35px 0 30px;
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    row-gap: 57px;
+}
+
+h1.benefits-text-h1 {
+    margin: 0;
+    width: 216px;
+    height: 46px;
+    font-family: "Montserrat Bold";
+    font-size: 32px;
+    letter-spacing: 0.025em;
+    color: #30423E;
+    line-height: 39px;
+
+}
+
+div.benefit-wrapper {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    gap: 15.5px;
+}
+
+h3.benefits-text-h3 {
+    margin: 0;
+    width: 193px;
+    font-family: "Fira Code Regular";
+    color: #21312D;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: -0.005em;
+
+}
+
+img.benefits {
+    width: 99.5px;
+    height: 76px;
+}
+
+/* course-catalog */
+h1.course-catalog-text-h1 {
+    width: 216px;
+    height: 46px;
+    font-family: "Montserrat Bold";
+    font-size: 32px;
+    letter-spacing: 0.025em;
+    color: var(--white-text);
+    line-height: 39px;
+    margin: 44px 0 0 30px;
+}
+
+div.catalog-wrapper {
+    margin: 36px 0 0 51px;
+    display: inline-grid;
+    justify-content: center;
+    grid-template-rows: auto auto;
+}
+
+div.card-wrapper {
+    display: inline-grid;
+    grid-template-columns: auto 189px auto;
+    gap: 32.5px;
+    justify-items: center;
+    align-items: center;
+}
+
+button.go-left-btn{
+    width: 17px;
+    height: 33px;
+    background: none;
+    border: none;
+    background-image: url("assets/go-left-button.svg");
+
+}
+
+button.go-right-btn {
+    width: 17px;
+    height: 33px;
+    background: none;
+    border: none;
+    background-image: url("assets/go-right-button.svg");
+
+}
+
+div.course-big-card {
+    width: 189px;
+    height: 200px;
+    border-radius: 19px;
+    background-color: var(--coral-acsent);
+    display: inline-grid;
+    grid-template-rows: 100px 100px;
+}
+
+h6.schedule-text {
+    margin-top: 32px;
+    margin-left: 20px;
+    font-family: "Fira Code Bold";
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0.005em;
+    text-decoration-line: underline;
+    color: var(--white-text);
+}
+
+div.schedule{
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    gap: 27px
+}
+
+p.course-name {
+    font-family: "Montserrat Black";
+    font-weight: 900;
+    font-size: 73px;
+    line-height: 89px;
+    text-align: right;
+    letter-spacing: 0.005em;
+    text-decoration-line: underline;
+    color: var(--white-text);
+    padding-right: 18px;
+}
+
+div.indicator {
+    width: 15px;
+    height: 15px;
+    background-color: var(--green-acsent);
+    margin-top: 32px;
+    margin-right: 18px;
+    border-radius: 50%;
+    filter: blur(2px);
+
+}
+
+ul.progress-bar {
+    margin-top: 22px;
+    align-self: center;
+    justify-self:center ;
+    gap: 8px;
+    display: grid;
+    grid-template-columns:  6px 6px 6px 6px 6px;
+}
+
+li.progress-bar {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #C4C4C4;
+}
+
+li.selected {
+    background-color: var(--coral-acsent);
+}
+
+/* contact-us-screen*/
+section.contact-us-screen {
+    margin-top: 77px;
+    height: 269px;
+    background-color: var(--coral-acsent);
+}
+
+div.contact-wrapper {
+    margin-top: 47px;
+    margin-left: 31px;
+    display: inline-grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 315px;
+}
+
+h1.contact-text-h1 {
+    color: var(--white-text);
+    font-family: "Montserrat Bold";
+    font-size: 32px;
+    line-height: 39px;
+    letter-spacing: 0.005em;
+    margin: 0;
+}
+
+input.contact-email {
+    height: 45px;
+    margin-top: 17px;
+    background-color: var(--coral-acsent);
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: var(--white-text);
+}
+
+input.contact-email::placeholder {
+    font-family: "Fira Code Light";
+    color: var(--white-text);
+    font-size: 18px;
+    font-style: normal;
+    line-height: 24px;
+    letter-spacing: 0.005em;
+
+}
+
+button.contact-us-btn {
+    align-self: end;
+    justify-self: end;
+}
+
+/* footer */
+footer.footer {
+    margin-top: 14px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+div.footer-wrapper {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    gap: 14px;
+}
+
+h3.footer {
+    font-family: "Montserrat Bold";
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0.025em;
+    align-self: center;
+    color: #B2B7B5;
+}
+
+a.footer{
+    align-self: center;
+    background-image: url("assets/github 1.svg");
+    width: 32px;
+    height: 32px;
+}
+/* small tablets */
+@media screen and (min-width: 620px){
+    
+}
+
+/* tablets */
+@media screen and (min-width: 960px){
+
+}
+
+/* desktops */
+@media screen and (min-width: 1200px){
+
+}
