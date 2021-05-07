@@ -9,23 +9,23 @@
 /* fonts */
 @font-face {
     font-family: 'Fira Code Regular';
-    src: url("assets/fonts/Fira_Code/FiraCode-Regular.ttf");
+    src: url("../../assets/fonts/Fira_Code/FiraCode-Regular.ttf");
 }
 @font-face {
     font-family: 'Fira Code Bold';
-    src: url("assets/fonts/Fira_Code/FiraCode-Bold.ttf");
+    src: url("../../assets/fonts/Fira_Code/FiraCode-Bold.ttf");
 }
 @font-face {
     font-family: 'Montserrat Bold';
-    src: url("assets/fonts/Montserrat/Montserrat-Bold.ttf");
+    src: url("../../assets/fonts/Montserrat/Montserrat-Bold.ttf");
 }
 @font-face {
     font-family: 'Montserrat Black';
-    src: url("assets/fonts/Montserrat/Montserrat-Black.ttf");
+    src: url("../../assets/fonts/Montserrat/Montserrat-Black.ttf");
 }
 @font-face {
     font-family: "Fira Code Light";
-    src: url("assets/fonts/Fira_Code/FiraCode-Light.ttf");
+    src: url("../../assets/fonts/Fira_Code/FiraCode-Light.ttf");
 }
 
 /* reset */
@@ -41,6 +41,7 @@ body, p, a, ul, li{
 
 /*base-styles*/
 body{
+    background-color: var(--primary);
     overflow-x: hidden;
 }
 
@@ -88,7 +89,9 @@ nav.menu {
     animation-duration: 1s;
     transform-origin: center bottom;
     animation-delay: inherit;
+    transition-timing-function: ease-in;
 }
+
 @keyframes menu {
     from {
         visibility: visible;
@@ -114,6 +117,7 @@ nav.menu.green-anon.open{
     animation-name: menu-open;
     animation-duration: 1s;
     transform-origin: center bottom;
+    transition-timing-function: ease-in;
 }
 @keyframes menu-open {
     from {
@@ -124,24 +128,28 @@ nav.menu.green-anon.open{
     }
 }
 
-ul.nav-green {
+ul.green-anon {
     display: grid;
-    opacity: 0.9;
     grid-template-rows: 43px 43px;
     background-color: var(--green-acsent);
     border-radius: 15px;
 }
 
-ul.nav-green li.menu-option:not(:last-child){
+ul.green-anon li.menu-option.green-anon:not(:last-child){
     border-width: 0 0 1px 0;
     border-style: solid;
     border-color: #5DB59F;
 }
 
-li.menu-option{
+li.menu-option.green-anon{
     opacity: 70%;
     text-align: center;
     margin-top: 12px;
+    font-family: "Montserrat Black";
+    letter-spacing: 0.055em;
+    text-decoration-line: underline;
+    font-size: 15px;
+    line-height: 18px;
 }
 
 button.contact-us-btn{
@@ -151,23 +159,24 @@ button.contact-us-btn{
     margin-left: 237px;
     background: none;
     border: none;
-    background-image: url("assets/contact-us-button.svg");
+    background-image: url("../../assets/contact-us-button.svg");
 
 }
 
 /* mobile-styles */
 body.main-page {
     background: var(--primary);
+    overflow-x: hidden;
 }
 /* main screen*/
 button.menu-green{
-    background-image: url("assets/menu-logo-btn.svg");
+    background-image: url("../../assets/menu-logo-btn.svg");
     justify-self: start;
     align-self: start;
 }
 
 button.menu-coral{
-    background-image: url("assets/menu-logo-btn-coral.svg");
+    background-image: url("../../assets/menu-logo-btn-coral.svg");
 }
 
 div.introducing-screen{
@@ -271,6 +280,18 @@ img.benefits {
     height: 76px;
 }
 
+img.benefits.one{
+    background-image: url("../../assets/benefit-icon-1.svg");
+    border: none;
+}
+img.benefits.two{
+    background-image: url("../../assets/benefit-icon-2.svg");
+    border: none;
+}
+img.benefits.three{
+    background-image: url("../../assets/benefit-icon-3.svg");
+    border: none;
+}
 /* course-catalog */
 h1.course-catalog-text-h1 {
     width: 216px;
@@ -304,7 +325,7 @@ button.go-left-btn{
     background: none;
     border: none;
     justify-self: end;
-    background-image: url("assets/go-left-button.svg");
+    background-image: url("../../assets/go-left-button.svg");
 
 }
 
@@ -314,7 +335,7 @@ button.go-right-btn {
     background: none;
     border: none;
     justify-self: start;
-    background-image: url("assets/go-right-button.svg");
+    background-image: url("../../assets/go-right-button.svg");
 
 }
 
@@ -461,7 +482,7 @@ h3.footer {
 
 a.footer{
     align-self: center;
-    background-image: url("assets/github 1.svg");
+    background-image: url("../../assets/github 1.svg");
     width: 32px;
     height: 32px;
 }

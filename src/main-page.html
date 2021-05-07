@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main-page-styles.css">
+    <link rel="stylesheet" href="components/styles/main-page.css">
     <title>LevelUP</title>
 </head>
 <body class="main-page">
     <div class="react-component-wrapper">
         <nav class="menu green-anon grid">
             <ul class="nav-green grid">
-                <li class="menu-option">&lt;/Sign Up></li>
-                <li class="menu-option">&lt;/Log In></li>
+                <li class="green-menu-option">&lt;/Sign Up></li>
+                <li class="green-menu-option">&lt;/Log In></li>
             </ul>
         </nav>
         <section class="introducing-screen">
@@ -72,20 +72,21 @@
             </div>
 
         </section>
+        <footer class="footer">
+            <div class="footer-wrapper">
+                <h3 class="footer">Copyright 2021 @Tushkan</h3>
+                <a class="footer" href="https://github.com/katetushkan"></a>
+            </div>
+        </footer>
+        <script>
+            const menu_btn = document.querySelector(".menu-btn")
+            const menu = document.querySelector('.menu')
+            menu_btn.addEventListener('click', () => {
+                menu_btn.classList.toggle('open');
+                menu.classList.toggle('open');
+            })
+        </script>
     </div>
-    <footer class="footer">
-        <div class="footer-wrapper">
-            <h3 class="footer">Copyright 2021 @Tushkan</h3>
-            <a class="footer" href="https://github.com/katetushkan"></a>
-        </div>
-    </footer>
-    <script>
-        const menu_btn = document.querySelector(".menu-btn")
-        const menu = document.querySelector('.menu')
-        menu_btn.addEventListener('click', () => {
-            menu_btn.classList.toggle('open');
-            menu.classList.toggle('open');
-        })
-    </script>
+
 </body>
 </html>
