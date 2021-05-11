@@ -1,0 +1,77 @@
+@import "main-page.css";
+
+.menu {
+    visibility: hidden;
+    position: absolute;
+    height: 0;
+    width: 189px;
+    left: 25.5px;
+    animation-name: menu;
+    animation-duration: 1s;
+    transform-origin: center bottom;
+    animation-delay: inherit;
+    transition-timing-function: ease-in;
+}
+
+@keyframes menu {
+    from {
+        visibility: visible;
+        transform: translateY(0px);
+    }
+    50%{
+        opacity: 0.2;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-100px);
+    }
+}
+
+nav.menu.green-anon.open{
+    position: absolute;
+    visibility: visible;
+    z-index: 2;
+    top: 75px;
+    left: 25.5px;
+    width: 189px;
+    animation-name: menu-open;
+    animation-duration: 1s;
+    transform-origin: center bottom;
+    transition-timing-function: ease-in;
+}
+@keyframes menu-open {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+ul.green-anon {
+    display: grid;
+    grid-template-rows: 43px 43px;
+    background-color: var(--green-acsent);
+    border-radius: 15px;
+}
+
+ul.green-anon li.menu-option.green-anon:not(:last-child){
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #5DB59F;
+}
+
+li.menu-option.green-anon{
+    opacity: 0.7;
+    text-align: center;
+    margin-top: 12px;
+    font-family: "Montserrat Black";
+    letter-spacing: 0.055em;
+    text-decoration-line: underline;
+    font-size: 15px;
+    line-height: 18px;
+}
+Link {
+    text-decoration: none;
+}

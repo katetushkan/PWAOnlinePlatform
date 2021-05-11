@@ -9,23 +9,23 @@
 /* fonts */
 @font-face {
     font-family: 'Fira Code Regular';
-    src: url("../../assets/fonts/Fira_Code/FiraCode-Regular.ttf");
+    src: url("../fonts/Fira_Code/FiraCode-Regular.ttf");
 }
 @font-face {
     font-family: 'Fira Code Bold';
-    src: url("../../assets/fonts/Fira_Code/FiraCode-Bold.ttf");
+    src: url("../fonts/Fira_Code/FiraCode-Bold.ttf");
 }
 @font-face {
     font-family: 'Montserrat Bold';
-    src: url("../../assets/fonts/Montserrat/Montserrat-Bold.ttf");
+    src: url("../fonts/Montserrat/Montserrat-Bold.ttf");
 }
 @font-face {
     font-family: 'Montserrat Black';
-    src: url("../../assets/fonts/Montserrat/Montserrat-Black.ttf");
+    src: url("../fonts/Montserrat/Montserrat-Black.ttf");
 }
 @font-face {
     font-family: "Fira Code Light";
-    src: url("../../assets/fonts/Fira_Code/FiraCode-Light.ttf");
+    src: url("../fonts/Fira_Code/FiraCode-Light.ttf");
 }
 
 /* reset */
@@ -45,7 +45,7 @@ body{
     overflow-x: hidden;
 }
 
-button.menu-btn{
+.menu-btn{
     border: none;
     width: 46px;
     height: 37.5px;
@@ -64,7 +64,7 @@ button.menu-btn{
     }
 }
 
-button.menu-btn.open{
+.menu-btn.open{
     animation-name: menu-btn-open;
     animation-duration: 1s;
     transform: rotate(180deg);
@@ -79,120 +79,49 @@ button.menu-btn.open{
     }
 }
 
-nav.menu {
-    visibility: hidden;
-    position: absolute;
-    height: 0;
-    width: 189px;
-    left: 25.5px;
-    animation-name: menu;
-    animation-duration: 1s;
-    transform-origin: center bottom;
-    animation-delay: inherit;
-    transition-timing-function: ease-in;
-}
-
-@keyframes menu {
-    from {
-        visibility: visible;
-        transform: translateY(0px);
-    }
-    50%{
-        opacity: 0.2;
-    }
-    to {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-100px);
-    }
-}
-
-nav.menu.green-anon.open{
-    position: absolute;
-    visibility: visible;
-    z-index: 2;
-    top: 75px;
-    left: 25.5px;
-    width: 189px;
-    animation-name: menu-open;
-    animation-duration: 1s;
-    transform-origin: center bottom;
-    transition-timing-function: ease-in;
-}
-@keyframes menu-open {
-    from {
-        transform: translateY(-100px);
-    }
-    to {
-        transform: translateY(0px);
-    }
-}
-
-ul.green-anon {
-    display: grid;
-    grid-template-rows: 43px 43px;
-    background-color: var(--green-acsent);
-    border-radius: 15px;
-}
-
-ul.green-anon li.menu-option.green-anon:not(:last-child){
-    border-width: 0 0 1px 0;
-    border-style: solid;
-    border-color: #5DB59F;
-}
-
-li.menu-option.green-anon{
-    opacity: 70%;
-    text-align: center;
-    margin-top: 12px;
-    font-family: "Montserrat Black";
-    letter-spacing: 0.055em;
-    text-decoration-line: underline;
-    font-size: 15px;
-    line-height: 18px;
-}
-
-button.contact-us-btn{
+.arrow-btn{
     width: 104px;
     height: 27px;
     margin-top: 24px;
-    margin-left: 237px;
     background: none;
     border: none;
-    background-image: url("../../assets/contact-us-button.svg");
 
 }
-
+.contact-us-btn{
+    background-image: url("../contact-us-button.svg");
+}
 /* mobile-styles */
-body.main-page {
+.main-page {
     background: var(--primary);
     overflow-x: hidden;
 }
 /* main screen*/
-button.menu-green{
-    background-image: url("../../assets/menu-logo-btn.svg");
-    justify-self: start;
-    align-self: start;
+.menu-green.menu-btn{
+    background-image: url("../menu-logo-btn.svg");
 }
-
+.menu-button-wrapper {
+    display: block;
+    align-items: start;
+    margin: 26px auto auto;
+    max-width: 325px;
+}
 button.menu-coral{
-    background-image: url("../../assets/menu-logo-btn-coral.svg");
+    background-image: url("../menu-logo-btn-coral.svg");
 }
 
-div.introducing-screen{
-    height: 426px;
+.introducing-screen{
+    background-color: var(--primary);
 }
 
-div.introducing-screen-content {
-    margin: 25.5px 21px 56px 25.5px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 37.5px 163px 101px 43px ;
-    justify-items: end;
-    align-items: end;
+.introducing-screen-content {
+    display: block;
+    max-width: 325px;
+    margin: auto;
+    align-self: center;
+    text-align: right;
 }
 
-h1.intro-text-h1 {
+.intro-text-h1 {
     margin: 35px 0 0 0;
     font-family: "Montserrat Bold";
     color: #4DBBA1;
@@ -200,8 +129,8 @@ h1.intro-text-h1 {
     text-align: right;
 }
 
-h3.intro-text-h3 {
-    margin: 27px 0 0 0;
+.intro-text-h3 {
+    margin: 27px 0 22px 0;
     font-family: 'Fira Code Regular';
     font-weight: normal;
     letter-spacing: 0.015em;
@@ -211,13 +140,8 @@ h3.intro-text-h3 {
     text-align: right;
 }
 
-button.go-to-btn {
-    margin: 22px 0 0 190px;
-    width: 137px;
-    height: 21px;
-    background: none;
+.go-to-btn {
     padding: 0;
-    border: none;
     color: #E0F6F2;
     font-family: "Fira Code Regular";
     font-size: 16px;
@@ -225,30 +149,35 @@ button.go-to-btn {
     text-indent: 3px;
     text-decoration: underline;
     letter-spacing: -0.045em;
-    align-self: center;
 }
 
 /* benefits-screen*/
-section.benefits-screen{
+.benefits-screen{
     margin-top: 56px;
     height: 668px;
     background-color: var(--green-acsent);
     opacity: 0.9;
 }
 
-div.benefits-screen-content {
-    margin: 0;
-    padding: 36px 35px 0 30px;
+.content-wrapper {
+    max-width: 325px;
+    text-align: start;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 80px;
+}
+.benefits-screen-content {
+    margin: 58px auto auto;
     display: inline-grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
     row-gap: 57px;
 }
 
-h1.benefits-text-h1 {
-    margin: 0;
-    width: 216px;
-    height: 46px;
+.benefits-text-h1 {
+    padding-top: 36px;
+    margin-top: 0;
+    margin-bottom: 0;
     font-family: "Montserrat Bold";
     font-size: 32px;
     letter-spacing: 0.025em;
@@ -257,14 +186,14 @@ h1.benefits-text-h1 {
 
 }
 
-div.benefit-wrapper {
+.benefit-wrapper {
     display: inline-grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto;
     gap: 15.5px;
 }
 
-h3.benefits-text-h3 {
+.benefits-text-h3 {
     margin: 0;
     width: 193px;
     font-family: "Fira Code Regular";
@@ -275,25 +204,13 @@ h3.benefits-text-h3 {
 
 }
 
-img.benefits {
+.img-benefits {
     width: 99.5px;
     height: 76px;
 }
 
-img.benefits.one{
-    background-image: url("../../assets/benefit-icon-1.svg");
-    border: none;
-}
-img.benefits.two{
-    background-image: url("../../assets/benefit-icon-2.svg");
-    border: none;
-}
-img.benefits.three{
-    background-image: url("../../assets/benefit-icon-3.svg");
-    border: none;
-}
 /* course-catalog */
-h1.course-catalog-text-h1 {
+.course-catalog-text-h1 {
     width: 216px;
     height: 46px;
     font-family: "Montserrat Bold";
@@ -301,17 +218,17 @@ h1.course-catalog-text-h1 {
     letter-spacing: 0.025em;
     color: var(--white-text);
     line-height: 39px;
-    margin: 44px 0 0 30px;
+    margin: 44px 0 0 0;
 }
 
-div.catalog-wrapper {
+.catalog-wrapper {
     margin: 36px 0 51px 0;
     display: flex;
     flex-direction: column;
     justify-self: center;
 }
 
-div.card-wrapper {
+.card-wrapper {
     display: inline-grid;
     grid-template-columns: auto 189px auto;
     gap: 32.5px;
@@ -319,38 +236,40 @@ div.card-wrapper {
     align-items: center;
 }
 
-button.go-left-btn{
+.go-left-btn{
     width: 17px;
     height: 33px;
     background: none;
     border: none;
     justify-self: end;
-    background-image: url("../../assets/go-left-button.svg");
+    background-image: url("../go-left-button.svg");
 
 }
 
-button.go-right-btn {
+.go-right-btn {
     width: 17px;
     height: 33px;
     background: none;
     border: none;
     justify-self: start;
-    background-image: url("../../assets/go-right-button.svg");
+    background-image: url("../go-right-button.svg");
 
 }
 
-div.course-big-card {
+.course-big-card {
     width: 189px;
     height: 200px;
     border-radius: 19px;
     background-color: var(--coral-acsent);
-    display: inline-grid;
-    grid-template-rows: 100px 100px;
+    display: block;
 }
 
-h6.schedule-text {
+.card-inside-wrapper {
     margin-top: 32px;
     margin-left: 20px;
+    margin-right: 18px;
+}
+.schedule-text {
     font-family: "Fira Code Bold";
     font-size: 15px;
     line-height: 20px;
@@ -358,31 +277,32 @@ h6.schedule-text {
     text-decoration-line: underline;
     color: var(--white-text);
 }
+.schedule-wrapper{
+    display: flex;
+    flex-direction: row;
+    /*margin-top: 32px;*/
 
-div.schedule{
-    display: inline-grid;
-    grid-template-columns: auto auto;
-    gap: 27px
+}
+.schedule{
+    display: flex;
+    flex-direction: column;
 }
 
-p.course-name {
+.course-name {
+    margin: 30px 0 0;
     font-family: "Montserrat Black";
-    font-weight: 900;
     font-size: 73px;
-    line-height: 89px;
     text-align: right;
     letter-spacing: 0.005em;
     text-decoration-line: underline;
     color: var(--white-text);
-    padding-right: 18px;
 }
 
-div.indicator {
+.indicator {
     width: 15px;
     height: 15px;
     background-color: var(--green-acsent);
-    margin-top: 32px;
-    margin-right: 18px;
+    margin-left: 27px;
     border-radius: 50%;
     filter: blur(2px);
 
@@ -410,51 +330,57 @@ li.selected {
 }
 
 /* contact-us-screen*/
-section.contact-us-screen {
+.contact-us-screen {
     margin-top: 77px;
     height: 269px;
     background-color: var(--coral-acsent);
 }
 
-div.contact-wrapper {
+.contact-wrapper {
     margin-top: 47px;
-    margin-left: 31px;
-    display: inline-grid;
-    grid-template-rows: auto auto auto;
-    grid-template-columns: 315px;
+    margin-left: auto;
+    display: block;
+    margin-right: auto;
+    text-align: left;
 }
 
-h1.contact-text-h1 {
+.contact-text-h1 {
+    padding-top: 47px;
+    margin: 0;
     color: var(--white-text);
     font-family: "Montserrat Bold";
     font-size: 32px;
     line-height: 39px;
     letter-spacing: 0.005em;
-    margin: 0;
 }
 
-input.contact-email {
+.form-field {
     height: 45px;
     margin-top: 17px;
     background-color: var(--coral-acsent);
     border-width: 0 0 1px 0;
     border-style: solid;
     border-color: var(--white-text);
-}
-
-input.contact-email::placeholder {
     font-family: "Fira Code Light";
     color: var(--white-text);
     font-size: 18px;
     font-style: normal;
     line-height: 24px;
     letter-spacing: 0.005em;
-
 }
 
-button.contact-us-btn {
-    align-self: end;
-    justify-self: end;
+.form-field::placeholder {
+    color: var(--white-text);
+}
+
+.contact-us-btn {
+    align-self: flex-end ;
+
+}
+.form-wrapper{
+    max-width: 325px;
+    display: flex;
+    flex-direction: column;
 }
 
 /* footer */
@@ -482,7 +408,7 @@ h3.footer {
 
 a.footer{
     align-self: center;
-    background-image: url("../../assets/github 1.svg");
+    background-image: url("../github 1.svg");
     width: 32px;
     height: 32px;
 }

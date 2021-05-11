@@ -1,0 +1,76 @@
+@import "main-page.css";
+
+.log-in-screen {
+    background-color: var(--coral-acsent);
+    height: 100vh;
+    animation-name: fadeInUp;
+    animation-duration: 0.5s;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.go-back {
+    border: none;
+    width: 15px;
+    height: 20px;
+    padding: 0;
+    background: none;
+
+}
+.go-back.auth {
+    background-image: url("../go-back-coral-btn.svg");
+
+
+}
+
+.go-back-btn-wrapper {
+    display: block;
+    align-items: start;
+    padding-top: 28px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 325px;
+}
+
+.authenticate-form-wrapper{
+    display: block;
+    max-width: 325px;
+    margin: 138px auto auto;
+}
+
+.google{
+    height: 27px;
+    width: 27px;
+    margin-left: 12px;
+    border:none;
+    background: none;
+    background-image: url("../google.svg");
+}
+
+.login-btn {
+    background-image: url("../login-button.svg");
+    align-self: end;
+    margin-top: 0;
+    float: right;
+}
+.signup-btn {
+    background-image: url("../signup-button.svg");
+    align-self: end;
+    margin-top: 0;
+    float: right;
+}
+.auth-btn-wrapper{
+    display: block;
+    margin-top: 44px;
+
+}
