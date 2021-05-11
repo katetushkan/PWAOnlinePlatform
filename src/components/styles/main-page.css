@@ -4,51 +4,152 @@
     --green-acsent: #7AD7C0;
     --coral-acsent: #FF6D6A;
     --white-text: #ffffff;
+    --green-anonim-menu: 86px;
     }
 /* fonts */
 @font-face {
     font-family: 'Fira Code Regular';
-    src: url("assets/fonts/Fira_Code/FiraCode-Regular.ttf");
+    src: url("../../assets/fonts/Fira_Code/FiraCode-Regular.ttf");
 }
 @font-face {
     font-family: 'Fira Code Bold';
-    src: url("assets/fonts/Fira_Code/FiraCode-Bold.ttf");
+    src: url("../../assets/fonts/Fira_Code/FiraCode-Bold.ttf");
 }
 @font-face {
     font-family: 'Montserrat Bold';
-    src: url("assets/fonts/Montserrat/Montserrat-Bold.ttf");
+    src: url("../../assets/fonts/Montserrat/Montserrat-Bold.ttf");
 }
 @font-face {
     font-family: 'Montserrat Black';
-    src: url("assets/fonts/Montserrat/Montserrat-Black.ttf");
+    src: url("../../assets/fonts/Montserrat/Montserrat-Black.ttf");
 }
 @font-face {
     font-family: "Fira Code Light";
-    src: url("assets/fonts/Fira_Code/FiraCode-Light.ttf");
+    src: url("../../assets/fonts/Fira_Code/FiraCode-Light.ttf");
 }
+
 /* reset */
 li{
     list-style-type: none;
 }
+
 body, p, a, ul, li{
     margin: 0;
     padding: 0;
     text-decoration: none;
 }
+
 /*base-styles*/
 body{
-    background: var(--primary);
+    background-color: var(--primary);
     overflow-x: hidden;
 }
-button.menu{
+
+button.menu-btn{
     border: none;
     width: 46px;
     height: 37.5px;
     background: none;
+    animation-name: menu-btn-closed;
+    animation-duration: 1s;
+    transform: rotate(0deg);
 }
-nav.anonimus-green-nav{
+
+@keyframes menu-btn-closed {
+    from {
+        transform: rotate(180deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+button.menu-btn.open{
+    animation-name: menu-btn-open;
+    animation-duration: 1s;
+    transform: rotate(180deg);
+}
+
+@keyframes menu-btn-open {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+nav.menu {
     visibility: hidden;
+    position: absolute;
     height: 0;
+    width: 189px;
+    left: 25.5px;
+    animation-name: menu;
+    animation-duration: 1s;
+    transform-origin: center bottom;
+    animation-delay: inherit;
+    transition-timing-function: ease-in;
+}
+
+@keyframes menu {
+    from {
+        visibility: visible;
+        transform: translateY(0px);
+    }
+    50%{
+        opacity: 0.2;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-100px);
+    }
+}
+
+nav.menu.green-anon.open{
+    position: absolute;
+    visibility: visible;
+    z-index: 2;
+    top: 75px;
+    left: 25.5px;
+    width: 189px;
+    animation-name: menu-open;
+    animation-duration: 1s;
+    transform-origin: center bottom;
+    transition-timing-function: ease-in;
+}
+@keyframes menu-open {
+    from {
+        transform: translateY(-100px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+ul.green-anon {
+    display: grid;
+    grid-template-rows: 43px 43px;
+    background-color: var(--green-acsent);
+    border-radius: 15px;
+}
+
+ul.green-anon li.menu-option.green-anon:not(:last-child){
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #5DB59F;
+}
+
+li.menu-option.green-anon{
+    opacity: 70%;
+    text-align: center;
+    margin-top: 12px;
+    font-family: "Montserrat Black";
+    letter-spacing: 0.055em;
+    text-decoration-line: underline;
+    font-size: 15px;
+    line-height: 18px;
 }
 
 button.contact-us-btn{
@@ -58,21 +159,24 @@ button.contact-us-btn{
     margin-left: 237px;
     background: none;
     border: none;
-    background-image: url("assets/contact-us-button.svg");
+    background-image: url("../../assets/contact-us-button.svg");
 
 }
 
 /* mobile-styles */
-
+body.main-page {
+    background: var(--primary);
+    overflow-x: hidden;
+}
 /* main screen*/
 button.menu-green{
-    background-image: url("assets/menu-logo-btn.svg");
+    background-image: url("../../assets/menu-logo-btn.svg");
     justify-self: start;
     align-self: start;
 }
 
 button.menu-coral{
-    background-image: url("assets/menu-logo-btn-coral.svg");
+    background-image: url("../../assets/menu-logo-btn-coral.svg");
 }
 
 div.introducing-screen{
@@ -176,6 +280,18 @@ img.benefits {
     height: 76px;
 }
 
+img.benefits.one{
+    background-image: url("../../assets/benefit-icon-1.svg");
+    border: none;
+}
+img.benefits.two{
+    background-image: url("../../assets/benefit-icon-2.svg");
+    border: none;
+}
+img.benefits.three{
+    background-image: url("../../assets/benefit-icon-3.svg");
+    border: none;
+}
 /* course-catalog */
 h1.course-catalog-text-h1 {
     width: 216px;
@@ -189,10 +305,10 @@ h1.course-catalog-text-h1 {
 }
 
 div.catalog-wrapper {
-    margin: 36px 0 0 51px;
-    display: inline-grid;
-    justify-content: center;
-    grid-template-rows: auto auto;
+    margin: 36px 0 51px 0;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
 }
 
 div.card-wrapper {
@@ -208,7 +324,8 @@ button.go-left-btn{
     height: 33px;
     background: none;
     border: none;
-    background-image: url("assets/go-left-button.svg");
+    justify-self: end;
+    background-image: url("../../assets/go-left-button.svg");
 
 }
 
@@ -217,7 +334,8 @@ button.go-right-btn {
     height: 33px;
     background: none;
     border: none;
-    background-image: url("assets/go-right-button.svg");
+    justify-self: start;
+    background-image: url("../../assets/go-right-button.svg");
 
 }
 
@@ -272,6 +390,7 @@ div.indicator {
 
 ul.progress-bar {
     margin-top: 22px;
+    display: flex;
     align-self: center;
     justify-self:center ;
     gap: 8px;
@@ -363,7 +482,7 @@ h3.footer {
 
 a.footer{
     align-self: center;
-    background-image: url("assets/github 1.svg");
+    background-image: url("../../assets/github 1.svg");
     width: 32px;
     height: 32px;
 }

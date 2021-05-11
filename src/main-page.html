@@ -3,80 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main-page-styles.css">
+    <link rel="stylesheet" href="components/styles/main-page.css">
     <title>LevelUP</title>
 </head>
-<body>
-    <nav class="anonimus-green-nav grid">
-        <ul class="green-nav">
-            <li>&lt;/Sign Up></li>
-            <li>&lt;/Log In></li>
-        </ul>
-    </nav>
-    <section class="introducing-screen">
-        <div class="introducing-screen-content grid">
-            <button class="menu-green menu"></button>
-            <h1 class="intro-text-h1">Start a new <br> semester like <br> a real &lt;/pro>!</h1>
-            <h3 class="intro-text-h3"> Courses from student<br> to student right<br> in your hand!</h3>
-            <button class="go-to-btn">go to courses ></button>
-
-        </div>
-    </section>
-    <section class="benefits-screen">
-        <div class="benefits-screen-content grid">
-            <h1 class="benefits-text-h1">&lt;/Benefits></h1>
-            <div class="benefit-wrapper">
-                <img class="benefits" src="assets/benefit-icon-1.svg">
-                <h3 class="benefits-text-h3">&lt;/You> can get access<br> from wherever you<br> want! Even with no<br> Internet! Check our<br> courses’ materials<br> from everywhere!</h3>
-            </div>
-            <div class="benefit-wrapper">
-                <img class="benefits"  src="assets/benefit-icon-2.svg">
-                <h3 class="benefits-text-h3">Our &lt;/teachers> are<br> the real-time<br> programmers who can<br> share with you their<br> latest experience!</h3>
-            </div>
-            <div class="benefit-wrapper">
-                <img class="benefits" src="assets/benefit-icon-3.svg">
-                <h3 class="benefits-text-h3">Only you decided how<br> many &lt;/courses> you<br> want to attend! There<br> is a possibility to<br> pick every course u<br> would like to!</h3>
-            </div>
-        </div>
-    </section>
-    <section class="course-catalog-screen">
-        <h1 class="course-catalog-text-h1" id="courses">&lt;/Courses></h1>
-        <div class="catalog-wrapper grid">
-            <div class="card-wrapper grid">
-                <button class="go-left-btn"></button>
-                <div class="course-big-card">
-                    <div class="schedule grid">
-                        <h6 class="schedule-text">Mn:  3:20pm<br>Wed: 1:25pm</h6>
-                        <div class="indicator"></div>
-                    </div>
-
-                    <p class="course-name">Js</p>
-                </div>
-                <button class="go-right-btn"></button>
-            </div>
-            <ul class="progress-bar">
-                <li class="progress-bar"></li>
-                <li class="progress-bar selected"></li>
-                <li class="progress-bar"></li>
-                <li class="progress-bar"></li>
-                <li class="progress-bar"></li>
+<body class="main-page">
+    <div class="react-component-wrapper">
+        <nav class="menu green-anon grid">
+            <ul class="nav-green grid">
+                <li class="green-menu-option">&lt;/Sign Up></li>
+                <li class="green-menu-option">&lt;/Log In></li>
             </ul>
-        </div>
-    </section>
-    <section class="contact-us-screen">
-        <div class="contact-wrapper">
-            <h1 class="contact-text-h1">Wanna become<br>a &lt;/tutor>?</h1>
-            <input type="email" placeholder="Enter your email..." class="contact-email">
-            <button class="contact-us-btn"></button>
-        </div>
+        </nav>
+        <section class="introducing-screen">
+            <div class="introducing-screen-content grid">
+                <button class="menu-green menu-btn"></button>
+                <h1 class="intro-text-h1">Start a new <br> semester like <br> a real &lt;/pro>!</h1>
+                <h3 class="intro-text-h3"> Courses from student<br> to student right<br> in your hand!</h3>
+                <button class="go-to-btn">go to courses ></button>
 
-    </section>
-    <footer class="footer">
-        <div class="footer-wrapper">
-            <h3 class="footer">Copyright 2021 @Tushkan</h3>
-            <a class="footer" href="https://github.com/katetushkan"></a>
-        </div>
-    </footer>
+            </div>
+        </section>
+        <section class="benefits-screen">
+            <div class="benefits-screen-content grid">
+                <h1 class="benefits-text-h1">&lt;/Benefits></h1>
+                <div class="benefit-wrapper">
+                    <img class="benefits" src="assets/benefit-icon-1.svg">
+                    <h3 class="benefits-text-h3">&lt;/You> can get access<br> from wherever you<br> want! Even with no<br> Internet! Check our<br> courses’ materials<br> from everywhere!</h3>
+                </div>
+                <div class="benefit-wrapper">
+                    <img class="benefits"  src="assets/benefit-icon-2.svg">
+                    <h3 class="benefits-text-h3">Our &lt;/teachers> are<br> the real-time<br> programmers who can<br> share with you their<br> latest experience!</h3>
+                </div>
+                <div class="benefit-wrapper">
+                    <img class="benefits" src="assets/benefit-icon-3.svg">
+                    <h3 class="benefits-text-h3">Only you decided how<br> many &lt;/courses> you<br> want to attend! There<br> is a possibility to<br> pick every course u<br> would like to!</h3>
+                </div>
+            </div>
+        </section>
+        <section class="course-catalog-screen">
+            <h1 class="course-catalog-text-h1" id="courses">&lt;/Courses></h1>
+            <div class="catalog-wrapper grid">
+                <div class="card-wrapper grid">
+                    <button class="go-left-btn"></button>
+                    <div class="course-big-card">
+                        <div class="schedule grid">
+                            <h6 class="schedule-text">Mn:  3:20pm<br>Wed: 1:25pm</h6>
+                            <div class="indicator"></div>
+                        </div>
+
+                        <p class="course-name">Js</p>
+                    </div>
+                    <button class="go-right-btn"></button>
+                </div>
+                <ul class="progress-bar">
+                    <li class="progress-bar"></li>
+                    <li class="progress-bar selected"></li>
+                    <li class="progress-bar"></li>
+                    <li class="progress-bar"></li>
+                    <li class="progress-bar"></li>
+                </ul>
+            </div>
+        </section>
+        <section class="contact-us-screen">
+            <div class="contact-wrapper">
+                <h1 class="contact-text-h1">Wanna become<br>a &lt;/tutor>?</h1>
+                <input type="email" placeholder="Enter your email..." class="contact-email">
+                <button class="contact-us-btn"></button>
+            </div>
+
+        </section>
+        <footer class="footer">
+            <div class="footer-wrapper">
+                <h3 class="footer">Copyright 2021 @Tushkan</h3>
+                <a class="footer" href="https://github.com/katetushkan"></a>
+            </div>
+        </footer>
+        <script>
+            const menu_btn = document.querySelector(".menu-btn")
+            const menu = document.querySelector('.menu')
+            menu_btn.addEventListener('click', () => {
+                menu_btn.classList.toggle('open');
+                menu.classList.toggle('open');
+            })
+        </script>
+    </div>
 
 </body>
 </html>
