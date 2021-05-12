@@ -13,7 +13,7 @@ const BigCourseCard = (props) =>{
                             <date className="schedule-text">Mn: 3:20pm</date>
                             <date className="schedule-text">Wed: 1:25pm</date>
                         </div>
-                        <div className="indicator"/>
+                        <div className="indicator circle"/>
                     </div>
                     <h1 className="course-name">{props.courseName}</h1>
                 </div>

@@ -13,7 +13,7 @@ const NavMenu = (props) => {
                     {
                         props.options && props.options.map(function(el,index) {
                             const link = el.substring(2, el.length-1).replace(" ", "")
-                            return <li className={liClassName} key={index}><Link to={link} style={{color: '#363A38'}}>{el}</Link></li>
+                            return <li className={liClassName} key={index}><Link className={props.className} to={link}>{el}</Link></li>
                         })
                     }
                 </ul>

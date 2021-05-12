@@ -28,7 +28,7 @@ class MainPage extends React.Component{
         return(
             <div className="main-page">
 
-            <NavMenu className="green-anon" options={["</Sign Up>", '</Log In>']}/>
+            <NavMenu className="green-anon" options={["</Sign Up>", '</Log In>', '</Courses>']}/>
             <div className="menu-button-wrapper">
                 <button className="menu-green menu-btn"/>
             </div>

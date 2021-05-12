@@ -9,7 +9,7 @@ class Authenticate extends Component{
     }
     onClickGoBack = () =>{
         const { history } = this.props;
-        history.push("/");
+        history.goBack();
     }
     handleChange = (event) => {
         this.setState({

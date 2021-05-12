@@ -20,6 +20,10 @@
     src: url("../fonts/Montserrat/Montserrat-Bold.ttf");
 }
 @font-face {
+    font-family: 'Montserrat Medium';
+    src: url("../fonts/Montserrat/Montserrat-Medium.ttf");
+}
+@font-face {
     font-family: 'Montserrat Black';
     src: url("../fonts/Montserrat/Montserrat-Black.ttf");
 }
@@ -27,6 +31,7 @@
     font-family: "Fira Code Light";
     src: url("../fonts/Fira_Code/FiraCode-Light.ttf");
 }
+
 
 /* reset */
 li{
