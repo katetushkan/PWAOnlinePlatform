@@ -7,6 +7,7 @@ import BenefitIcon2 from "../../assets/benefit-icon-2.svg";
 import BenefitIcon3 from "../../assets/benefit-icon-3.svg";
 import {getCourses} from "../../gateway/firestore_gateway";
 import { connect} from "react-redux";
+import {Link} from "react-router-dom";
 
 class MainPage extends React.Component{
 
@@ -28,7 +29,7 @@ class MainPage extends React.Component{
         return(
             <div className="main-page">
 
-            <NavMenu className="green-anon" options={["</Sign Up>", '</Log In>', '</Courses>']}/>
+            <NavMenu className="green-anon" options={["</Sign Up>", '</Log In>', '</Courses>', '</Profile>']}/>
             <div className="menu-button-wrapper">
                 <button className="menu-green menu-btn"/>
             </div>
@@ -70,7 +71,9 @@ class MainPage extends React.Component{
                 <div className="content-wrapper">
                     <h1 className="course-catalog-text-h1" id="courses">&lt;/Courses></h1>
                     <div className="catalog-wrapper grid">
-                        <BigCourseCard courseName={'Js'}/>
+                        < Link className="small-card-info-link" to="/CourseInfo">
+                            <BigCourseCard courseName={'Js'}/>
+                        </Link>
                         <ul className="progress-bar">
                             <li className="progress-bar"/>
                             <li className="progress-bar selected"/>

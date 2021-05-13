@@ -6,11 +6,11 @@ const CourseCard = () => {
     return(
         <div>
         <Link to="/CourseRoom">
-            <div className="course-card-wrapper">
+            <div className="course-card-wrapper student">
 
                 <div className="course-catalog-card coral-card">
-                    <div className="indicator circle"/>
-                    <h1 className="course-catalog-card-name white">Js</h1>
+                    <div className="indicator small-card arrow"/>
+                    <h1 className="course-catalog-card-name green">Js</h1>
                 </div>
 
             </div>

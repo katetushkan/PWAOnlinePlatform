@@ -1,0 +1,17 @@
+@import "main-page.css";
+
+.menu-button-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-name {
+    font-family: "Montserrat Bold";
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.025em;
+    text-decoration-line: underline;
+    color: #E5E5E5;
+}

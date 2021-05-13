@@ -1,0 +1,153 @@
+@import "main-page.css";
+.message-date {
+    padding: 0;
+    margin: auto 0 0 auto;
+    text-align: center;
+    vertical-align: middle;
+    font-family: "Montserrat Bold";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height:36px;
+    letter-spacing: 0.005em;
+    text-decoration-line: underline;
+    color: rgba(77, 187, 161, 0.78);
+}
+.message-wrapper{
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.message-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 109, 106, 0.7);
+
+    font-family: "Montserrat Bold";
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.005em;
+
+    color: #000000;
+}
+
+.message-placeholder-wrapper {
+    max-width: 282px;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    margin:0
+}
+
+.message-placeholder{
+    background: rgba(122, 215, 192, 0.65);
+    border-radius: 12px;
+    width: 282px;
+}
+.message-text {
+    width: 252px;
+    margin: 11px auto auto;
+    overflow-wrap: break-word;
+    font-family: "Montserrat SemiBold";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.005em;
+    color: #000000;
+}
+.message-timestamp {
+    text-align: right;
+    margin-top:11px ;
+    margin-right: 14px;
+    margin-bottom: 6px;
+    font-family: "Fira Code Light";
+    font-size: 11px;
+    line-height: 14px;
+    letter-spacing: 0.005em;
+
+    color: #000000;
+}
+.author-name {
+    align-self: flex-end;
+    margin: 2px 8px 0 0;
+    font-family: "Montserrat Medium";
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.02em;
+
+    color: #E5E5E5;
+
+}
+
+.author-name.from {
+    align-self: flex-start;
+    margin: 2px 0 0 8px;
+    font-family: "Montserrat Medium";
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.02em;
+    color: #E5E5E5;
+
+}
+
+.message-send {
+    max-width: 341px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px auto;
+}
+.input-message{
+    width: 280px;
+    max-width: 280px;
+    margin: 0;
+    background: rgba(122, 215, 192, 0.65);
+    border-radius: 6px;
+    padding-top: 12px;
+    padding-left: 9px;
+    padding-bottom: 12px;
+    border: none;
+
+}
+
+.input-message:focus{
+    overflow-wrap: break-word;
+    border: none;
+    background-color: var(--green-acsent);
+    color: #32574E;
+
+}
+
+
+.input-message::placeholder {
+    font-family: "Montserrat Bold";
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.005em;
+    color: rgba(48, 66, 62, 0.7);
+}
+
+.sent-btn{
+    width: 29px;
+    height: 29px;
+    background: none;
+    border: none;
+    background-image: url("../send-btn.svg");
+}
+.message-sent-wrapper {
+    position: fixed;
+    width: 100%;
+    border-top: 1px solid var(--green-acsent);
+    bottom: 0;
+    margin: 0;
+
+}

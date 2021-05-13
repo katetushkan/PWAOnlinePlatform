@@ -10,13 +10,23 @@
 
 }
 
+.course-card-wrapper.student {
+    width: 126px;
+    height: 115px;
+    margin-bottom: 28px;
+    text-align: end;
+    background-color: var(--green-acsent);
+    border-radius: 10px;
+
+}
+
 .course-catalog-card {
     display: flex;
     flex-direction: column;
     align-items: end;
 }
 
-.indicator {
+.indicator.small-card {
     align-self: flex-end;
     margin-top: 18px;
     margin-right: 12px;
@@ -30,4 +40,21 @@
     letter-spacing: 0.005em;
     text-decoration-line: underline;
     color: var(--white-text);
+}
+.course-catalog-card-name.green  {
+    margin: 0 0 0 13px;
+    font-family: "Montserrat Black";
+    font-size: 56px;
+    text-align: right;
+    letter-spacing: 0.005em;
+    text-decoration-line: underline;
+    color: #30423E;
+}
+
+.indicator.arrow {
+    background: none;
+    filter: none;
+    width: 15px;
+    height: 22px;
+    background-image: url("../logo-back-btn.svg");
 }

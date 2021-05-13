@@ -51,7 +51,6 @@ nav.menu.open{
 
 ul.green-anon {
     display: grid;
-    grid-template-rows: 43px 43px;
     background-color: var(--green-acsent);
     border-radius: 15px;
 }
@@ -62,22 +61,18 @@ ul.green-anon li.menu-option.green-anon:not(:last-child){
     border-color: #5DB59F;
 }
 ul.green-anon li.menu-option.green-anon:last-child{
-    border-width: 0 0 1px 0;
     border-style: solid;
     border-color: #5DB59F;
-    padding-bottom: 12px;
     border-width: 0 0 0 0;
 }
 
 li.menu-option{
+    margin: 12px auto 12px auto;
     opacity: 0.7;
-    text-align: center;
-    margin-top: 12px;
     font-family: "Montserrat Black";
     letter-spacing: 0.055em;
     text-decoration-line: underline;
     font-size: 15px;
-    line-height: 18px;
 }
 
 ul.coral {

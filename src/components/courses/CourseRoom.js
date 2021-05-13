@@ -20,7 +20,7 @@ class CourseRoom extends React.Component{
                         <button className="go-back course-room" onClick={this.onClickGoBack}/>
                     </div>
                     <h5 className="course-room-name">CourseName</h5>
-                    <Link className="chat-btn"/>
+                    <Link to="/ChatRoom" className="chat-btn"/>
                 </div>
                 <VideoHolder/>
                 <DocumentList/>
