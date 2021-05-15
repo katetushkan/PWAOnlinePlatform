@@ -1,0 +1,18 @@
+@import "main-page.css";
+
+
+.timestamp-wrapper{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.timestamp {
+    background: #32574E;
+    border-radius: 19px;
+    width: 126px;
+    height: 36px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+}

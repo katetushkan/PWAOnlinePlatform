@@ -1,0 +1,41 @@
+@import "main-page.css";
+/*@import "course-room.css";*/
+
+.chat-screen {
+    background-color: var(--primary);
+    height: 100vh;
+}
+
+.course-chat-name {
+    font-family: "Montserrat Black";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 33px;
+    line-height: 40px;
+    letter-spacing: 0.005em;
+    margin:0;
+    text-decoration-line: underline;
+    color: #489F8A;
+
+}
+
+.course-room-panel {
+    justify-content: space-between;
+    align-items: center;
+    max-width: 331px;
+}
+
+.chat-holder-wrapper {
+    margin-top: 27px;
+    width: 100%;
+    border-top: 1px solid var(--green-acsent);
+}
+
+.chat-wrapper{
+    max-width: 339px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+

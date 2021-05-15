@@ -1,0 +1,35 @@
+.video-wrapper{
+    display: block;
+    max-width: 375px;
+    margin: 48px auto auto;
+}
+.video-holder {
+    height: 183px;
+    width: 100%;
+    background-color: #7AD7C0;
+}
+.video-btn-wrapper{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 13px;
+    margin-top: 21px;
+    gap: 20px
+}
+
+.record-btn{
+    border: none;
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    background: none;
+    background-image: url("../record-btn.svg");
+}
+
+.save-btn{
+    border: none;
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    background: none;
+    background-image: url("../save-btn.svg");
+}

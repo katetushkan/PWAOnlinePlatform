@@ -1,0 +1,22 @@
+@import "main-page.css";
+
+.documents-wrapper {
+    max-width: 285px;
+    margin: 45px auto auto;
+    border-top: 1px solid var(--green-acsent);
+}
+.document-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+    text-align: left;
+    align-items: center;
+}
+
+.add-file-btn {
+    background: none;
+    margin-top: 55px;
+    width: 106px;
+    background-image: url("../add-file-button.svg");
+    float: right;
+}

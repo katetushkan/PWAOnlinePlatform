@@ -1,0 +1,36 @@
+@import "main-page.css";
+
+.document-content {
+    margin-top: 13px;
+    margin-bottom: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.border{
+    position: relative;
+    width: 240px;
+    height: 0.5px;
+    background-color:var(--green-acsent) ;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.5;
+}
+
+.file-name {
+    font-family: "Fira Code Light";
+    font-size: 14px;
+    font-weight: lighter;
+    line-height: 18px;
+    letter-spacing: 0.005em;
+    color: var(--green-acsent);
+}
+.del-btn{
+
+    border: none;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    background: none;
+    background-image: url("../del-btn.svg");
+}

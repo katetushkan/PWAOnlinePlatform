@@ -1,0 +1,96 @@
+@import "main-page.css";
+@import "course-room.css";
+
+button.course-info{
+    background-image: url("../go-back-green-btn.svg");
+}
+
+.go-back-btn-wrapper {
+    display: block;
+    align-items: start;
+    padding-top: 28px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 325px;
+}
+
+.course-info-wrapper{
+    max-width: 291px;
+    margin: 69px auto auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-info-item-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--green-acsent);
+}
+
+.description{
+    flex-direction: column;
+    border: none;
+    margin-top: 33px;
+}
+
+.course-info-course-name {
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 39px;
+    letter-spacing: 0.005em;
+    font-style: normal;
+    margin: 0;
+    font-family: "Montserrat Bold";
+    color: var(--green-acsent);
+
+}
+.course-info-additional-value{
+    font-family: "Fira Code Regular";
+    font-style: normal;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    font-size: 21px;
+    line-height: 28px;
+    letter-spacing: 0.005em;
+    align-self: flex-end;
+    color: #E0F7F2;
+}
+.course-info-additional{
+    font-family: "Montserrat Bold";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 21px;
+    margin-bottom: 0;
+    color: var(--green-acsent);
+    line-height: 26px;
+    letter-spacing: 0.005em;
+}
+.course-info-item-wrapper.period{
+    margin: 39px 0 0 0;
+}
+
+.course-info-additional.description{
+    border-bottom: 1px solid var(--green-acsent);
+    width: 140px;
+}
+.subscribe-btn{
+    margin-top: 24px;
+    background: none;
+    width: 106px;
+    background-image: url("../subcribe-button.svg");
+    margin-left: auto;
+    float: right;
+}
+.course-info-additional-value.description {
+    margin-top: 14px;
+    font-family: "Fira Code Regular";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 25px;
+    font-feature-settings: 'salt' on;
+
+    color: #E0F6F2;
+}

@@ -1,0 +1,8 @@
+@import "main-page.css";
+
+.course-catalog {
+    background-color: var(--primary);
+    height: 100vh;
+}
+
+
