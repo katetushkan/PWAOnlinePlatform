@@ -13,7 +13,7 @@ class MessageInputHolder extends React.Component {
         return (
             <div className="message-sent-wrapper">
                 <div className="message-send">
-                    <input className="input-message message-text" onChange={this.handleChange} type="text" placeholder="Text message..."/>
+                    <textarea className="input-message message-text" onChange={this.handleChange} type="text" placeholder="Text message..."/>
                     <button className="sent-btn"/>
                 </div>
             </div>

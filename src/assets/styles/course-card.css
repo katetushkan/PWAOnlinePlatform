@@ -10,7 +10,7 @@
 
 }
 
-.course-card-wrapper.student {
+.course-card-wrapper.green {
     width: 126px;
     height: 115px;
     margin-bottom: 28px;
@@ -51,7 +51,7 @@
     color: #30423E;
 }
 
-.indicator.arrow {
+.indicator.pointer {
     background: none;
     filter: none;
     width: 15px;

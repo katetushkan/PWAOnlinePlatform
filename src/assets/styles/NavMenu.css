@@ -65,14 +65,19 @@ ul.green-anon li.menu-option.green-anon:last-child{
     border-color: #5DB59F;
     border-width: 0 0 0 0;
 }
+.menu-option_btn{
+    display: inline;
+}
 
-li.menu-option{
-    margin: 12px auto 12px auto;
+.menu-option{
+    padding: 12px 0;
     opacity: 0.7;
+    text-align: center;
     font-family: "Montserrat Black";
     letter-spacing: 0.055em;
     text-decoration-line: underline;
     font-size: 15px;
+    color: #363A38;
 }
 
 ul.coral {

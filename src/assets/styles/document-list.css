@@ -14,6 +14,7 @@
 }
 
 .add-file-btn {
+    background: none;
     margin-top: 55px;
     width: 106px;
     background-image: url("../add-file-button.svg");

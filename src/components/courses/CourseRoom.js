@@ -1,9 +1,10 @@
 import React from "react";
 import '../../assets/styles/authenticate.css';
 import '../../assets/styles/course-room.css';
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import DocumentList from "./DocumentList";
 import VideoHolder from "./VideoHolder";
+import {connect} from "react-redux";
 
 class CourseRoom extends React.Component{
 
@@ -14,19 +15,34 @@ class CourseRoom extends React.Component{
 
     render() {
         return (
-            <div className="course-room professor">
-                <div className="course-room-panel">
-                    <div className="go-back-btn-wrapper course-room">
-                        <button className="go-back course-room" onClick={this.onClickGoBack}/>
+            <div>
+                {this.props.auth.auth ?
+                    <div className="course-room professor">
+                        <div className="course-room-panel">
+                            <div className="go-back-btn-wrapper course-room">
+                                <button className="go-back course-room" onClick={this.onClickGoBack}/>
+                            </div>
+                            <h5 className="course-room-name">CourseName</h5>
+                            <Link to="/ChatRoom" className="chat-btn"/>
+                        </div>
+                        <VideoHolder/>
+                        <DocumentList/>
                     </div>
-                    <h5 className="course-room-name">CourseName</h5>
-                    <Link to="/ChatRoom" className="chat-btn"/>
-                </div>
-                <VideoHolder/>
-                <DocumentList/>
+                    :
+                    <Redirect to="/Login"/>
+
+                }
             </div>
         )
     }
 }
 
-export default CourseRoom;
+
+const mapStateToProps = (state) => {
+    return{
+        auth: state.auth,
+        token:state.token
+    }
+}
+
+export default connect(mapStateToProps)(CourseRoom);

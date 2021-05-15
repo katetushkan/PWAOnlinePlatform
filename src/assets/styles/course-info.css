@@ -17,7 +17,8 @@ button.course-info{
 .course-info-wrapper{
     max-width: 291px;
     margin: 69px auto auto;
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 .course-info-item-wrapper{
@@ -75,6 +76,8 @@ button.course-info{
     width: 140px;
 }
 .subscribe-btn{
+    margin-top: 24px;
+    background: none;
     width: 106px;
     background-image: url("../subcribe-button.svg");
     margin-left: auto;

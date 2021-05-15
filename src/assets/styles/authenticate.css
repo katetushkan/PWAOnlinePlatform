@@ -50,25 +50,25 @@
     height: 27px;
     width: 27px;
     margin-left: 12px;
-    border:none;
+    border: none;
     background: none;
     background-image: url("../google.svg");
 }
 
 .login-btn {
+    background: none;
     background-image: url("../login-button.svg");
-    align-self: end;
     margin-top: 0;
-    float: right;
 }
+
 .signup-btn {
+    background: none;
     background-image: url("../signup-button.svg");
-    align-self: end;
     margin-top: 0;
-    float: right;
 }
 .auth-btn-wrapper{
-    display: block;
+    display: flex;
+    justify-content: space-between;
     margin-top: 44px;
 
 }

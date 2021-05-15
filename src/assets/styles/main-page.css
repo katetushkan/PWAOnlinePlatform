@@ -42,10 +42,19 @@ li{
     list-style-type: none;
 }
 
-body, p, a, ul, li{
-    margin: 0;
-    padding: 0;
+/*body, p, a, ul, li{*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+a {
     text-decoration: none;
+    color: currentColor;
+
+}
+* {
+    all: unset;
+    display: revert;
+    box-sizing: border-box;
 }
 
 /*base-styles*/
@@ -91,12 +100,12 @@ body{
 .arrow-btn{
     width: 104px;
     height: 27px;
-    margin-top: 24px;
-    background: none;
     border: none;
+    /*background: ;*/
 
 }
 .contact-us-btn{
+    background: none;
     background-image: url("../contact-us-button.svg");
 }
 /* mobile-styles */
@@ -378,11 +387,17 @@ li.selected {
     letter-spacing: 0.005em;
 }
 
-.form-field::placeholder {
+.form-field::placeholder{
     color: var(--white-text);
+
+}
+.form-field:-webkit-autofill{
+    -webkit-text-fill-color: var(--white-text);
+    -webkit-box-shadow: 0 0 0px 1000px var(--coral-acsent) inset;
 }
 
 .contact-us-btn {
+    margin-top: 24px;
     align-self: flex-end ;
 
 }

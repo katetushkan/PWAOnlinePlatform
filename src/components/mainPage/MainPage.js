@@ -5,9 +5,9 @@ import BigCourseCard from "./BigCourseCard";
 import BenefitIcon1 from '../../assets/benefit-icon-1.svg';
 import BenefitIcon2 from "../../assets/benefit-icon-2.svg";
 import BenefitIcon3 from "../../assets/benefit-icon-3.svg";
-import {getCourses} from "../../gateway/firestore_gateway";
-import { connect} from "react-redux";
 import {Link} from "react-router-dom";
+import NavItem from "./NavItem";
+import LogOutNavItem from "../auth/LogOut";
 
 class MainPage extends React.Component{
 
@@ -19,8 +19,6 @@ class MainPage extends React.Component{
             menu.classList.toggle('open');
         })
 
-        let courses = await getCourses();
-        console.log(courses)
     }
 
 
@@ -29,7 +27,15 @@ class MainPage extends React.Component{
         return(
             <div className="main-page">
 
-            <NavMenu className="green-anon" options={["</Sign Up>", '</Log In>', '</Courses>', '</Profile>']}/>
+                <NavMenu className="green-anon">
+                    <NavItem className="green-anon" to="/Signup">
+                        {'</Sign Up>'}
+                    </NavItem>
+                    <NavItem className="green-anon" to="/Login">
+                        {'</Log In>'}
+                    </NavItem>
+                    <LogOutNavItem className="green-anon"/>
+                </NavMenu>
             <div className="menu-button-wrapper">
                 <button className="menu-green menu-btn"/>
             </div>
@@ -37,7 +43,7 @@ class MainPage extends React.Component{
                 <div className="introducing-screen-content">
                     <h1 className="intro-text-h1">Start a new <br/> semester like <br/> a real &lt;/pro>!</h1>
                     <h3 className="intro-text-h3"> Courses from student<br/> to student right<br/> in your hand!</h3>
-                    <a className="go-to-btn">go to courses ></a>
+                    <Link to="/Courses" className="go-to-btn">go to courses ></Link>
                 </div>
             </section>
             <section className="benefits-screen">
@@ -106,10 +112,5 @@ class MainPage extends React.Component{
     };
 }
 
-const mapStateToProps = (state) => {
-    return {
-        token: state.auth.token
-    }
-}
 
-export default connect()(MainPage);
+export default MainPage;

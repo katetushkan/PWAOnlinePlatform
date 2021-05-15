@@ -10,8 +10,8 @@ const BigCourseCard = (props) =>{
                 <div className="card-inside-wrapper">
                     <div className="schedule-wrapper">
                         <div className="schedule">
-                            <date className="schedule-text">Mn: 3:20pm</date>
-                            <date className="schedule-text">Wed: 1:25pm</date>
+                            <time className="schedule-text">Mn: 3:20pm</time>
+                            <time className="schedule-text">Wed: 1:25pm</time>
                         </div>
                         <div className="indicator circle"/>
                     </div>

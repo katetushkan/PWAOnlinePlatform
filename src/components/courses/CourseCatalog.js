@@ -3,10 +3,10 @@ import NavMenu from "../mainPage/NavMenu";
 import '../../assets/styles/main-page.css';
 import '../../assets/styles/course-catalog.css';
 import CatalogList from "./CourseList";
+import {connect} from "react-redux";
 
 class CourseCatalog extends React.Component{
-
-    componentDidMount() {
+    onClick = () => {
         const menu_btn = document.querySelector(".menu-btn")
         const menu = document.querySelector('.menu')
         menu_btn.addEventListener('click', () => {
@@ -14,18 +14,29 @@ class CourseCatalog extends React.Component{
             menu.classList.toggle('open');
         })
     }
-
     render() {
         return(
             <div className="course-catalog">
-                <NavMenu className="coral" options={["</Sign Up>", '</Log In>']}/>
+                { this.props.auth.auth ?
+                    <NavMenu className="coral" options={["</Profile>", '</Log Out>']}/>
+                    :
+                    <NavMenu className="coral" options={["</Sign Up>", '</Log In>']}/>
+                }
+
                 <div className="menu-button-wrapper">
-                    <button className="menu-coral menu-btn"/>
+                    <button onClick={this.onClick} className="menu-coral menu-btn"/>
                 </div>
-                <CatalogList/>
+                <CatalogList indicator="circle" color="" path='/CourseInfo'/>
             </div>
         )
     }
 }
 
-export default CourseCatalog;
+const mapStateToProps = (state) => {
+
+    return{
+        auth: state.auth
+    }
+}
+
+export default connect(mapStateToProps, null)(CourseCatalog);
