@@ -15,3 +15,7 @@
     text-decoration-line: underline;
     color: #E5E5E5;
 }
+
+.course-catalog-card-name {
+    color: var(--primary);
+}

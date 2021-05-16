@@ -24,7 +24,8 @@ const getCoursesSuccess = (state, action) => {
 
 const getCoursesListSuccess = (state, action) => {
     return updatedObject(state, {
-        coursesList: action.coursesList
+        coursesList: action.coursesList,
+        role: action.role
     });
 };
 

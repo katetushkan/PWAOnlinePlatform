@@ -38,22 +38,26 @@ class UserProfile extends React.Component{
         })
     }
     render() {
-        const userName = this.props.auth.user ? this.props.auth.user.email.split("@")[0] : 'UserName'
+        const userName = this.props.auth.user ? this.props.auth.user.email.split("@")[0] : 'UserName';
+        const role = this.props.role && this.props.role;
+        const menuClass = role === "student" ? "menu-green menu-btn" : "menu-coral menu-btn";
+        const navClass = role === "student" ? "green-anon" : "coral";
+        const catalogColor = role === "student" ? "green" : "";
         return(
             <div>
                 { this.props.auth.auth ?
                     <div className="course-catalog">
-                        <NavMenu className="green-anon">
-                            <NavItem className="green-anon" to="/Courses">
+                        <NavMenu className={navClass}>
+                            <NavItem className={navClass} to="/Courses">
                                 {'</Courses>'}
                             </NavItem>
-                            <LogOutNavItem className="green-anon"/>
+                            <LogOutNavItem className={navClass}/>
                         </NavMenu>
                         <div className="menu-button-wrapper">
-                            <button className="menu-green menu-btn" onClick={this.onNavClick}/>
+                            <button className={menuClass} onClick={this.onNavClick}/>
                             <h3 className="user-name">&lt;/{userName}></h3>
                         </div>
-                        <CatalogList color="green" indicator="pointer" path='/CourseRoom' courses={this.state.courses}/>
+                        <CatalogList color={catalogColor} indicator="pointer" path='/CourseRoom' courses={this.state.courses}/>
                     </div>
                     :
                     <Redirect to="/Login"/>
@@ -67,7 +71,8 @@ const mapStateToProps = (state) => {
     return{
         auth: state.auth,
         courses: state.courses.courses,
-        coursesList: state.courses.coursesList
+        coursesList: state.courses.coursesList,
+        role: state.courses.role
     }
 }
 

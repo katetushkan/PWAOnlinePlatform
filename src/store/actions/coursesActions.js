@@ -9,10 +9,11 @@ export const getCoursesSuccess = (courses) =>{
     }
 };
 
-export const getCoursesListSuccess = (coursesList) =>{
+export const getCoursesListSuccess = (coursesList, role) =>{
     return{
         type: actionTypes.GET_COURSES_LIST,
-        coursesList: coursesList
+        coursesList: coursesList,
+        role: role
     }
 };
 export const subscribe = (id) =>{
@@ -32,7 +33,7 @@ export const getCourses = () => {
 export const getCoursesList = (uid) => {
     return async dispatch => {
         let coursesList = await getUserCourseListByUserUid(uid)
-        dispatch(getCoursesListSuccess(coursesList))
+        dispatch(getCoursesListSuccess(coursesList.courseList, coursesList.role))
     }
 }
 

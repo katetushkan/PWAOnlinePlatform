@@ -26,7 +26,7 @@ export async function getCoursesFromFirestore() {
 
 export async function getUserCourseListByUserUid (uid){
     let userInfo = await firebaseInstance.firestore().collection('users').doc(uid).get();
-    return userInfo.data().courseList
+    return userInfo.data()
 }
 
 export async function subscribeToTheCourse(uid, courseId){
