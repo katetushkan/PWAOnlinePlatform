@@ -6,6 +6,13 @@
     animation-name: fadeInUp;
     animation-duration: 0.5s;
 }
+.error-info {
+    font-family: "Fira Code Regular";
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.025em;
+    color: #E5E5E5;
+}
 
 @keyframes fadeInUp {
     0% {

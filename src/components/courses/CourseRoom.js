@@ -14,6 +14,7 @@ class CourseRoom extends React.Component{
     }
 
     render() {
+        const courseId = this.props.match.params.id;
         return (
             <div>
                 {this.props.auth.auth ?

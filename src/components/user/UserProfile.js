@@ -1,15 +1,33 @@
-import NavMenu from "../mainPage/NavMenu";
+import NavMenu from "../utils/NavMenu";
 import CatalogList from "../courses/CourseList";
 import "../../assets/styles/user-profile.css"
 import React from "react";
 import { connect } from "react-redux";
 import {Redirect} from "react-router-dom";
-import NavItem from "../mainPage/NavItem";
+import NavItem from "../utils/NavItem";
 import LogOutNavItem from "../auth/LogOut";
+import {getCourses, getCoursesList} from "../../store/actions/coursesActions";
 
 class UserProfile extends React.Component{
-    componentDidMount() {
-
+    state = {
+        courses: []
+    }
+    async componentDidMount() {
+        let uid = this.props.auth && this.props.auth.user.uid
+        await this.props.getCourses();
+        await this.props.getCourseList(uid);
+        let courses = this.props.coursesList && this.mapCourseListToCourses(this.props);
+        debugger
+        this.setState({
+            courses: courses
+        })
+    }
+    mapCourseListToCourses = (props) => {
+        let courses = []
+        props.coursesList.forEach((el) =>{
+            courses.push(props.courses[el])
+        });
+        return courses;
     }
     onNavClick = () => {
         const menu_btn = document.querySelector(".menu-btn")
@@ -35,7 +53,7 @@ class UserProfile extends React.Component{
                             <button className="menu-green menu-btn" onClick={this.onNavClick}/>
                             <h3 className="user-name">&lt;/{userName}></h3>
                         </div>
-                        <CatalogList color="green" indicator="pointer" path='/CourseRoom'/>
+                        <CatalogList color="green" indicator="pointer" path='/CourseRoom' courses={this.state.courses}/>
                     </div>
                     :
                     <Redirect to="/Login"/>
@@ -48,8 +66,16 @@ class UserProfile extends React.Component{
 const mapStateToProps = (state) => {
     return{
         auth: state.auth,
-        token:state.token
+        courses: state.courses.courses,
+        coursesList: state.courses.coursesList
     }
 }
 
-export default connect(mapStateToProps)(UserProfile);
+const mapDispatchToProps = dispatch => {
+    return{
+        getCourses: () => dispatch(getCourses()),
+        getCourseList: (uid) => dispatch(getCoursesList(uid))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);

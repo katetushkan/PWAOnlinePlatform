@@ -1,6 +1,5 @@
 import * as actionTypes from "./actionTypes";
 import {firebaseInstance} from "../../gateway/firebase_gateway";
-import {credential} from "firebase-admin/lib/credential";
 
 export const authStart = () => {
     return{
@@ -62,11 +61,36 @@ export const authLoginGoogle = () => {
         firebaseInstance.auth()
             .signInWithPopup(provider)
             .then((result) => {
-                firebaseInstance.firestore().collection('users').doc(result.user.uid)
                 let credential = result.credential;
                 const token = credential.accessToken;
                 dispatch(authSuccess(token, result.user))
 
+            }).catch((error) => {
+            dispatch(authFail(error))
+        });
+
+    }
+
+}
+
+export const authSignUpGoogle = () => {
+    return dispatch => {
+        dispatch(authStart());
+        let provider = new firebaseInstance.auth.GoogleAuthProvider();
+        provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+        firebaseInstance.auth().useDeviceLanguage();
+        firebaseInstance.auth()
+            .signInWithPopup(provider)
+            .then((result) => {
+                let credential = result.credential;
+                const token = credential.accessToken;
+                firebaseInstance.firestore().collection('users').doc(result.user.uid).set({
+                    role: 'student',
+                    courseList: []
+                }).then( () => {
+                    dispatch(authSuccess(token, result.user))
+                    }
+                )
             }).catch((error) => {
             dispatch(authFail(error))
         });
@@ -80,9 +104,15 @@ export const authSignUp = (creds) => {
         dispatch(authStart());
         firebaseInstance.auth().createUserWithEmailAndPassword(creds.email, creds.password)
             .then((result) => {
-                firebaseInstance.firestore().collection('users').doc(result.user.uid)
+                debugger
                 const token = result.user.uid;
-                dispatch(authSuccess(token, result.user))
+                firebaseInstance.firestore().collection('users').doc(result.user.uid).set({
+                    role: "student",
+                    courseList: []
+                }).then( () => {
+                        dispatch(authSuccess(token, result.user));
+                    }
+                )
             })
             .catch((error) => {
                 dispatch(authFail(error))

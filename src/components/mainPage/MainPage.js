@@ -1,27 +1,22 @@
 import React from "react";
 import '../../assets/styles/main-page.css'
-import NavMenu from "./NavMenu";
-import BigCourseCard from "./BigCourseCard";
+import NavMenu from "../utils/NavMenu";
+import BigCourseCard from "../utils/BigCourseCard";
 import BenefitIcon1 from '../../assets/benefit-icon-1.svg';
 import BenefitIcon2 from "../../assets/benefit-icon-2.svg";
 import BenefitIcon3 from "../../assets/benefit-icon-3.svg";
 import {Link} from "react-router-dom";
-import NavItem from "./NavItem";
+import NavItem from "../utils/NavItem";
 import LogOutNavItem from "../auth/LogOut";
+import MenuBtn from "../utils/MenuBtn";
+import {connect} from "react-redux";
+import {getCourses} from "../../store/actions/coursesActions";
 
 class MainPage extends React.Component{
 
-    async componentDidMount() {
-        const menu_btn = document.querySelector(".menu-btn")
-        const menu = document.querySelector('.menu')
-        menu_btn.addEventListener('click', () => {
-            menu_btn.classList.toggle('open');
-            menu.classList.toggle('open');
-        })
-
+    componentDidMount() {
+        this.props.getCourses();
     }
-
-
 
     render(){
         return(
@@ -36,9 +31,7 @@ class MainPage extends React.Component{
                     </NavItem>
                     <LogOutNavItem className="green-anon"/>
                 </NavMenu>
-            <div className="menu-button-wrapper">
-                <button className="menu-green menu-btn"/>
-            </div>
+                <MenuBtn className="menu-green"/>
             <section className="introducing-screen">
                 <div className="introducing-screen-content">
                     <h1 className="intro-text-h1">Start a new <br/> semester like <br/> a real &lt;/pro>!</h1>
@@ -112,5 +105,16 @@ class MainPage extends React.Component{
     };
 }
 
+const mapStateToProps = (state) => {
+    return{
+        courses: state.courses,
+    }
+}
 
-export default MainPage;
+const mapDispatchToProps = dispatch => {
+    return{
+        getCourses: () => dispatch(getCourses()),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainPage);

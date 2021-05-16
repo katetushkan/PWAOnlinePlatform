@@ -18,3 +18,24 @@ export function initializeFirebase(){
     firebaseInstance.initializeApp(config)
     // firebaseInstance.firestore()
 }
+
+export async function getCoursesFromFirestore() {
+    let courses =  await firebaseInstance.firestore().collection('courses').get()
+    return courses.docs.map(doc => doc.data());
+}
+
+export async function getUserCourseListByUserUid (uid){
+    let userInfo = await firebaseInstance.firestore().collection('users').doc(uid).get();
+    return userInfo.data().courseList
+}
+
+export async function subscribeToTheCourse(uid, courseId){
+    let userInfo = await firebaseInstance.firestore().collection('users').doc(uid).get();
+    let list = userInfo.data().courseList
+    let courseList = list ? list : []
+    courseList.push(courseId)
+    debugger
+    await firebaseInstance.firestore().collection('users').doc(uid).update({
+        courseList: courseList
+    })
+}
