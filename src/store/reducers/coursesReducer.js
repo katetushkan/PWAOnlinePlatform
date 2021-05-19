@@ -3,14 +3,14 @@ import { updatedObject} from "../utility";
 
 const initialState = {
     courses: {},
-    coursesList: {}
+    coursesList: {},
+    files: {}
 }
 
 const subscribe = (state, action) => {
     let list = state.coursesList
     let newList = list ? list : []
     newList.push(action.coursesList)
-    debugger
     return updatedObject(state,{
         coursesList: newList
     });
@@ -21,6 +21,14 @@ const getCoursesSuccess = (state, action) => {
         courses: action.courses
     });
 };
+
+const getAllFiles = (state, action) => {
+    return updatedObject(state, {
+        files: action.files
+    });
+};
+
+
 
 const getCoursesListSuccess = (state, action) => {
     return updatedObject(state, {
@@ -33,7 +41,8 @@ const coursesReducer = (state=initialState, action) => {
     switch (action.type){
         case actionTypes.GET_COURSES: return getCoursesSuccess(state, action);
         case actionTypes.GET_COURSES_LIST: return getCoursesListSuccess(state, action);
-        case actionTypes.SUBSCRIBE : return subscribe(state, action)
+        case actionTypes.SUBSCRIBE : return subscribe(state, action);
+        case actionTypes.GET_FILES : return getAllFiles(state, action);
         default:
             return state;
     };

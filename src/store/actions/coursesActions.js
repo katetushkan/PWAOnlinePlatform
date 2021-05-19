@@ -1,4 +1,4 @@
-import {getCoursesFromFirestore, getUserCourseListByUserUid} from "../../gateway/firebase_gateway";
+import {getCoursesFromFirestore, getUserCourseListByUserUid, retrieveFiles} from "../../gateway/firebase_gateway";
 
 import * as actionTypes from "./actionTypes";
 
@@ -23,6 +23,13 @@ export const subscribe = (id) =>{
     }
 };
 
+export const getFiles = (files) =>{
+    return{
+        type: actionTypes.GET_FILES,
+        files: files
+    }
+};
+
 export const getCourses = () => {
     return async dispatch => {
         let courses = await getCoursesFromFirestore()
@@ -38,8 +45,14 @@ export const getCoursesList = (uid) => {
 }
 
 export const courseSubscribe = (id) => {
-    return dispatch => {
-        debugger
+    return async dispatch => {
         dispatch(subscribe(id))
+    }
+}
+
+export const getAllFiles = (id) => {
+    return async dispatch => {
+        let files = await retrieveFiles(id)
+        dispatch(getFiles(files))
     }
 }

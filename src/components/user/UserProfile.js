@@ -13,11 +13,10 @@ class UserProfile extends React.Component{
         courses: []
     }
     async componentDidMount() {
-        let uid = this.props.auth && this.props.auth.user.uid
+        let uid = this.props.auth.user && this.props.auth.user.uid
         await this.props.getCourses();
         await this.props.getCourseList(uid);
         let courses = this.props.coursesList && this.mapCourseListToCourses(this.props);
-        debugger
         this.setState({
             courses: courses
         })

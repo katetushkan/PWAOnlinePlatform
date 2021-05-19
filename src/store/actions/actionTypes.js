@@ -5,3 +5,4 @@ export const AUTH_LOGOUT = 'AUTH_LOGOUT';
 export const GET_COURSES = 'GET_COURSES';
 export const GET_COURSES_LIST = 'GET_COURSES_LIST';
 export const SUBSCRIBE = 'SUBSCRIBE';
+export const GET_FILES = 'GET_FILES';

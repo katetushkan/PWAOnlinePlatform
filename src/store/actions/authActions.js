@@ -104,7 +104,6 @@ export const authSignUp = (creds) => {
         dispatch(authStart());
         firebaseInstance.auth().createUserWithEmailAndPassword(creds.email, creds.password)
             .then((result) => {
-                debugger
                 const token = result.user.uid;
                 firebaseInstance.firestore().collection('users').doc(result.user.uid).set({
                     role: "student",

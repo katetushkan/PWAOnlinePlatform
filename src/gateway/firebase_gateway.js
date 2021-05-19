@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
+import "firebase/storage"
 
 export const firebaseInstance = firebase
 export const config = {
@@ -34,8 +35,37 @@ export async function subscribeToTheCourse(uid, courseId){
     let list = userInfo.data().courseList
     let courseList = list ? list : []
     courseList.push(courseId)
-    debugger
     await firebaseInstance.firestore().collection('users').doc(uid).update({
         courseList: courseList
     })
+}
+
+export async function retrieveFiles(courseId){
+    let storageRef = firebaseInstance.storage().ref()
+    let folderRef = "course_" + courseId
+    let files = await storageRef.child(folderRef).listAll()
+    return files
+}
+
+export async function uploadFile(file, fileName, courseId) {
+    let filePath = "course_" + courseId + "/" +fileName
+    await firebaseInstance.storage().ref().child(filePath).put(file)
+}
+
+export async function deleteFile(filePath) {
+    await firebaseInstance.storage().ref().child(filePath).delete()
+}
+
+export async function downloadFile(filePath) {
+    const downloadUrl = await firebaseInstance.storage().ref().child(filePath).getDownloadURL()
+    return downloadUrl
+}
+
+export async function saveStream (video, courseId) {
+    let metadata = {
+        contentType: 'video/webm',
+    };
+    let date = new Date().toLocaleDateString("en-US",{month: "2-digit", day: '2-digit'}).replace("/", "_")
+    let filePath = "course_" + courseId + "/" + "Lesson_" + date
+    await firebaseInstance.storage().ref().child(filePath).put(video, metadata)
 }

@@ -24,7 +24,7 @@ class CourseInfo extends React.Component{
         const description = course.description ? course.description : "...";
         const date = course.startDate ? new Date(course.startDate.seconds).toLocaleDateString( "en-US",{month: "2-digit", day: '2-digit'}) : "soon";
         const subsribtion = this.props.coursesList ? this.props.coursesList.includes(parseInt(courseId)) : false
-        debugger
+
         return(
             <div className="course-info-screen">
                 <div className="go-back-btn-wrapper course-info">
