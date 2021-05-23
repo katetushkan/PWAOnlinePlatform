@@ -7,13 +7,18 @@ import {Redirect} from "react-router-dom";
 import NavItem from "../utils/NavItem";
 import LogOutNavItem from "../auth/LogOut";
 import {getCourses, getCoursesList} from "../../store/actions/coursesActions";
+import NewMenuButton from "../utils/NewMenuButton";
 
 class UserProfile extends React.Component{
     state = {
         courses: []
     }
     async componentDidMount() {
-        let uid = this.props.auth.user && this.props.auth.user.uid
+        let uid = this.props.auth.user?.uid;
+        if (!uid) {
+            return
+        }
+
         await this.props.getCourses();
         await this.props.getCourseList(uid);
         let courses = this.props.coursesList && this.mapCourseListToCourses(this.props);
@@ -28,20 +33,13 @@ class UserProfile extends React.Component{
         });
         return courses;
     }
-    onNavClick = () => {
-        const menu_btn = document.querySelector(".menu-btn")
-        const menu = document.querySelector('.menu')
-        menu_btn.addEventListener('click', () => {
-            menu_btn.classList.toggle('open');
-            menu.classList.toggle('open');
-        })
-    }
+
     render() {
         const userName = this.props.auth.user ? this.props.auth.user.email.split("@")[0] : 'UserName';
         const role = this.props.role && this.props.role;
-        const menuClass = role === "student" ? "menu-green menu-btn" : "menu-coral menu-btn";
         const navClass = role === "student" ? "green-anon" : "coral";
         const catalogColor = role === "student" ? "green" : "";
+        const buttonColor = role === "student" ? "new-menu--green" : "new-menu--coral";
         return(
             <div>
                 { this.props.auth.auth ?
@@ -50,12 +48,12 @@ class UserProfile extends React.Component{
                             <NavItem className={navClass} to="/Courses">
                                 {'</Courses>'}
                             </NavItem>
+                            <NavItem className={navClass} to="/">
+                                {'</Main page>'}
+                            </NavItem>
                             <LogOutNavItem className={navClass}/>
                         </NavMenu>
-                        <div className="menu-button-wrapper">
-                            <button className={menuClass} onClick={this.onNavClick}/>
-                            <h3 className="user-name">&lt;/{userName}></h3>
-                        </div>
+                        <NewMenuButton className={buttonColor} userName={userName}/>
                         <CatalogList color={catalogColor} indicator="pointer" path='/CourseRoom' courses={this.state.courses}/>
                     </div>
                     :

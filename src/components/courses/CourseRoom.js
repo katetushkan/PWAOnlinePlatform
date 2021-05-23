@@ -28,7 +28,7 @@ class CourseRoom extends React.Component{
         const fullname = course ? course.fullName : "Js";
         const chatRoomLink = "/ChatRoom/" + this.props.match.params.id;
         return (
-            <div>
+            <>
                 {this.props.auth.auth ?
                     <div className="course-room professor">
                         <div className="course-room-panel">
@@ -43,9 +43,8 @@ class CourseRoom extends React.Component{
                     </div>
                     :
                     <Redirect to="/Login"/>
-
                 }
-            </div>
+            </>
         )
     }
 }

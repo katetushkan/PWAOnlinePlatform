@@ -11,6 +11,7 @@ import LogOutNavItem from "../auth/LogOut";
 import MenuBtn from "../utils/MenuBtn";
 import {connect} from "react-redux";
 import {getCourses} from "../../store/actions/coursesActions";
+import NewMenuButton from "../utils/NewMenuButton";
 
 class MainPage extends React.Component{
 
@@ -23,15 +24,20 @@ class MainPage extends React.Component{
             <div className="main-page">
 
                 <NavMenu className="green-anon">
-                    <NavItem className="green-anon" to="/Signup">
-                        {'</Sign Up>'}
-                    </NavItem>
-                    <NavItem className="green-anon" to="/Login">
-                        {'</Log In>'}
-                    </NavItem>
-                    <LogOutNavItem className="green-anon"/>
+                    { this.props.auth ?
+                        <LogOutNavItem className="green-anon"/>
+                        :
+                        <>
+                            <NavItem className="green-anon" to="/Signup">
+                                {'</Sign Up>'}
+                            </NavItem>
+                            <NavItem className="green-anon" to="/Login">
+                                {'</Log In>'}
+                            </NavItem>
+                        </>
+                    }
                 </NavMenu>
-                <MenuBtn className="menu-green"/>
+                <NewMenuButton className="new-menu--green"/>
             <section className="introducing-screen">
                 <div className="introducing-screen-content">
                     <h1 className="intro-text-h1">Start a new <br/> semester like <br/> a real &lt;/pro>!</h1>

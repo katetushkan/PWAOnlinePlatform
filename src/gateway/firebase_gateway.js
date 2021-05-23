@@ -1,7 +1,8 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
-import "firebase/storage"
+import "firebase/storage";
+import "firebase/database";
 
 export const firebaseInstance = firebase
 export const config = {
@@ -21,7 +22,7 @@ export function initializeFirebase(){
 }
 
 export async function getCoursesFromFirestore() {
-    let courses =  await firebaseInstance.firestore().collection('courses').get()
+    let courses =  await firebaseInstance.firestore().collection('courses').orderBy(firebaseInstance.firestore.FieldPath.documentId()).get()
     return courses.docs.map(doc => doc.data());
 }
 
@@ -69,3 +70,31 @@ export async function saveStream (video, courseId) {
     let filePath = "course_" + courseId + "/" + "Lesson_" + date
     await firebaseInstance.storage().ref().child(filePath).put(video, metadata)
 }
+
+export async function sendUserMessage (message, courseId) {
+    let messageRef = firebaseInstance.database().ref('chat/' + courseId)
+    const user = firebaseInstance.auth().currentUser
+    const {displayName, uid, photoURL} = user
+    await messageRef.push({
+        user: displayName,
+        body: message,
+        createdAt: firebaseInstance.database.ServerValue.TIMESTAMP,
+        uid: uid,
+        photoURL: photoURL ? photoURL : ""
+    })
+}
+
+export async function getRealTimeMessage (courseId, updateState) {
+    return new Promise(((resolve, reject) => {
+        firebaseInstance.database().ref("chat/" + courseId).on('value', (snapshots) => {
+            const messages = [];
+            snapshots.forEach((message) => {
+                messages.push(message.val())
+            })
+            updateState(messages)
+            resolve(messages);
+        })
+    }));
+}
+
+

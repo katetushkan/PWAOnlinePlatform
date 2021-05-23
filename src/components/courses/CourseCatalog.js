@@ -6,8 +6,8 @@ import CatalogList from "./CourseList";
 import {connect} from "react-redux";
 import NavItem from "../utils/NavItem";
 import LogOutNavItem from "../auth/LogOut";
-import MenuBtn from "../utils/MenuBtn";
 import {getCourses} from "../../store/actions/coursesActions";
+import NewMenuButton from "../utils/NewMenuButton";
 
 class CourseCatalog extends React.Component{
 
@@ -23,6 +23,9 @@ class CourseCatalog extends React.Component{
                         <NavItem className="coral" to="/Signup">
                             {'</Profile>'}
                         </NavItem>
+                        <NavItem className="coral" to="/">
+                            {'</Main page>'}
+                        </NavItem>
                         <LogOutNavItem className="coral"/>
                     </NavMenu>
                     :
@@ -35,8 +38,8 @@ class CourseCatalog extends React.Component{
                         </NavItem>
                     </NavMenu>
                 }
-                <MenuBtn className="menu-coral"/>
-                <CatalogList indicator="circle" color="" path='/CourseInfo' courses={this.props.courses.courses}/>
+                <NewMenuButton className="new-menu--coral"/>
+                <CatalogList indicator="circle" color="" path='/CourseInfo' courses={this.props.courses}/>
 
             </div>
         )
@@ -46,7 +49,7 @@ class CourseCatalog extends React.Component{
 const mapStateToProps = (state) => {
     return{
         auth: state.auth,
-        courses: state.courses
+        courses: state.courses.courses
     }
 }
 

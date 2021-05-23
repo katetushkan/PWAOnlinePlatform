@@ -1,0 +1,27 @@
+.new-menu {
+    display: block;
+}
+
+.new-menu__btn {
+    width: 46px;
+    height: 37.5px;
+    display: block;
+    background: none;
+    transition: transform 300ms ease-out;
+}
+
+.new-menu__input:checked + .new-menu__btn {
+    transform: rotate(180deg);
+}
+
+/*.new-menu__input:focus + .new-menu__btn {*/
+/*    filter: drop-shadow(0px 0px 2px white);*/
+/*}*/
+
+.new-menu--green .new-menu__btn {
+    background-image: url("../menu-logo-btn.svg");
+}
+
+.new-menu--coral .new-menu__btn {
+    background-image: url("../menu-logo-btn-coral.svg");
+}

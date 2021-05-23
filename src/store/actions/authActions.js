@@ -44,7 +44,6 @@ export const authLogin = (creds) => {
         ).then(res => {
             const token = res.user.uid;
             dispatch(authSuccess(token, res.user))
-            console.log(res)
         }).catch(err => {
             dispatch(authFail(err))
         })

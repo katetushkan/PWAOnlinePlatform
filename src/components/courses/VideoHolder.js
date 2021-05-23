@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "../../assets/styles/video-holder.css"
 import {connect} from "react-redux";
 import RecordRTCPromisesHandler from "recordrtc"
@@ -52,17 +52,18 @@ class VideoHolder extends React.Component{
                 <video className="video-holder"/>
                 <div className="video-btn-wrapper">
                     {this.props.role === "professor" &&
-                        <Fragment>
+                        <>
                             <h3 className="record-title"/>
                             <button onClick={this.recordVideo} className="record-btn"/>
                             <button className="save-btn"/>
-                        </Fragment>
+                        </>
                     }
                 </div>
             </div>
         )
     }
 }
+
 const mapStateToProps = (state) => {
     return{
         auth: state.auth,
