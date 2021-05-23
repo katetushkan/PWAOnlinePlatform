@@ -15,3 +15,11 @@
     text-decoration-line: underline;
     color: #E5E5E5;
 }
+
+.course-catalog-card-name {
+    color: var(--primary);
+}
+.user-profile-panel-wrapper{
+    display: flex;
+    justify-content: space-between;
+}

@@ -4,7 +4,7 @@ import NavItem from "../utils/NavItem";
 import React, {Fragment} from "react";
 import {Redirect} from "react-router-dom";
 
-const LogOutNavItem = (props) =>{
+const SubscribeBtn = (props) =>{
 
     const dispatch = useDispatch()
 
@@ -17,14 +17,12 @@ const LogOutNavItem = (props) =>{
     return (
         <Fragment>
             {auth ?
-                <NavItem className={props.className} onClick={onclickHandler}>
-                    {'</Log Out>'}
-                </NavItem>
-              : <Redirect to="/"/>
+                <button className="subscribe-btn arrow-btn" onClick={onclickHandler}/>
+                : <Redirect to="/Login"/>
             }
         </Fragment>
 
     )
 }
 
-export default LogOutNavItem;
+export default SubscribeBtn;

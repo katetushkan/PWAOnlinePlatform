@@ -17,6 +17,9 @@
     margin-bottom: 22px;
     display: flex;
     justify-content: space-between;
+    max-width: 331px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .message-icon {
@@ -145,11 +148,6 @@
     border: none;
     background-image: url("../send-btn.svg");
 }
-.message-sent-wrapper {
-    position: fixed;
-    width: 100%;
+.message-send-wrapper {
     border-top: 1px solid var(--green-acsent);
-    bottom: 0;
-    margin: 0;
-
 }

@@ -9,16 +9,16 @@ import ChatRoom from "./components/courses/chat/ChatRoom";
 import UserProfile from "./components/user/UserProfile";
 
 const BaseRouter = () => (
-    <div>
+    <>
         <Route exact path='/' component={MainPage}/>
         <Route exact path='/Login' component={Authenticate}/>
         <Route exact path='/Signup' component={Authenticate}/>
         <Route exact path='/Courses' component={CourseCatalog}/>
-        <Route exact path='/CourseRoom' component={CourseRoom}/>
-        <Route exact path='/CourseInfo' component={CourseInfo}/>
-        <Route exact path="/ChatRoom" component={ChatRoom}/>
+        <Route exact path='/CourseRoom/:id' component={CourseRoom}/>
+        <Route exact path='/CourseInfo/:id' component={CourseInfo}/>
+        <Route exact path="/ChatRoom/:id" component={ChatRoom}/>
         <Route exact path="/Profile" component={UserProfile}/>
-    </div>
+    </>
 );
 
 export default BaseRouter;

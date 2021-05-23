@@ -79,6 +79,16 @@ ul.green-anon li.menu-option.green-anon:last-child{
     font-size: 15px;
     color: #363A38;
 }
+.menu-option.coral{
+    padding: 12px 0;
+    opacity: 0.7;
+    text-align: center;
+    font-family: "Montserrat Black";
+    letter-spacing: 0.055em;
+    text-decoration-line: underline;
+    font-size: 15px;
+    color: var(--white-text);
+}
 
 ul.coral {
     display: grid;
@@ -98,12 +108,13 @@ ul.coral li.menu-option.coral:last-child{
     padding-bottom: 12px;
     border-width: 0 0 0 0;
 }
-a.green-anon {
-    color: #363A38;
-}
-a.coral{
-    color: var(--white-text);
-}
+/*a.green-anon {*/
+/*    color: #363A38;*/
+/*}*/
+/*a.coral{*/
+/*    color: var(--white-text);*/
+/*}*/
+
 Link {
     text-decoration: none;
 }

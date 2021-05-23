@@ -1,42 +1,63 @@
 import React from "react";
-import NavMenu from "../mainPage/NavMenu";
+import NavMenu from "../utils/NavMenu";
 import '../../assets/styles/main-page.css';
 import '../../assets/styles/course-catalog.css';
 import CatalogList from "./CourseList";
 import {connect} from "react-redux";
+import NavItem from "../utils/NavItem";
+import LogOutNavItem from "../auth/LogOut";
+import {getCourses} from "../../store/actions/coursesActions";
+import NewMenuButton from "../utils/NewMenuButton";
 
 class CourseCatalog extends React.Component{
-    onClick = () => {
-        const menu_btn = document.querySelector(".menu-btn")
-        const menu = document.querySelector('.menu')
-        menu_btn.addEventListener('click', () => {
-            menu_btn.classList.toggle('open');
-            menu.classList.toggle('open');
-        })
+
+    componentDidMount() {
+        this.props.getCourses();
     }
+
     render() {
         return(
             <div className="course-catalog">
                 { this.props.auth.auth ?
-                    <NavMenu className="coral" options={["</Profile>", '</Log Out>']}/>
+                    <NavMenu className="coral">
+                        <NavItem className="coral" to="/Signup">
+                            {'</Profile>'}
+                        </NavItem>
+                        <NavItem className="coral" to="/">
+                            {'</Main page>'}
+                        </NavItem>
+                        <LogOutNavItem className="coral"/>
+                    </NavMenu>
                     :
-                    <NavMenu className="coral" options={["</Sign Up>", '</Log In>']}/>
+                    <NavMenu className="coral">
+                        <NavItem className="coral" to="/Signup">
+                            {'</Sign Up>'}
+                        </NavItem>
+                        <NavItem className="coral" to="/Login">
+                            {'</Log In>'}
+                        </NavItem>
+                    </NavMenu>
                 }
+                <NewMenuButton className="new-menu--coral"/>
+                <CatalogList indicator="circle" color="" path='/CourseInfo' courses={this.props.courses}/>
 
-                <div className="menu-button-wrapper">
-                    <button onClick={this.onClick} className="menu-coral menu-btn"/>
-                </div>
-                <CatalogList indicator="circle" color="" path='/CourseInfo'/>
             </div>
         )
     }
 }
 
 const mapStateToProps = (state) => {
-
     return{
-        auth: state.auth
+        auth: state.auth,
+        courses: state.courses.courses
     }
 }
 
-export default connect(mapStateToProps, null)(CourseCatalog);
+const mapDispatchToProps = dispatch => {
+    return{
+        getCourses: () => dispatch(getCourses()),
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(CourseCatalog);
